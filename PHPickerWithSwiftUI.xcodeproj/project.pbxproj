@@ -13,6 +13,10 @@
 		0355E1E3261703FB00EA70B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0355E1E2261703FB00EA70B3 /* Preview Assets.xcassets */; };
 		0355E1EE261703FC00EA70B3 /* PHPickerWithSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355E1ED261703FC00EA70B3 /* PHPickerWithSwiftUITests.swift */; };
 		0355E1F9261703FC00EA70B3 /* PHPickerWithSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355E1F8261703FC00EA70B3 /* PHPickerWithSwiftUIUITests.swift */; };
+		0355E20A2617040C00EA70B3 /* PHPickerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355E2092617040C00EA70B3 /* PHPickerRepresentable.swift */; };
+		0355E20F2617043F00EA70B3 /* ImagePickerPresentationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355E20E2617043F00EA70B3 /* ImagePickerPresentationData.swift */; };
+		0355E2142617087600EA70B3 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355E2132617087600EA70B3 /* ImageData.swift */; };
+		0355E21926170BE800EA70B3 /* ImagePickerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355E21826170BE800EA70B3 /* ImagePickerRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		0355E1F4261703FC00EA70B3 /* PHPickerWithSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PHPickerWithSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0355E1F8261703FC00EA70B3 /* PHPickerWithSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPickerWithSwiftUIUITests.swift; sourceTree = "<group>"; };
 		0355E1FA261703FC00EA70B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0355E2092617040C00EA70B3 /* PHPickerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPickerRepresentable.swift; sourceTree = "<group>"; };
+		0355E20E2617043F00EA70B3 /* ImagePickerPresentationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerPresentationData.swift; sourceTree = "<group>"; };
+		0355E2132617087600EA70B3 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
+		0355E21826170BE800EA70B3 /* ImagePickerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,10 @@
 				0355E1DF261703FB00EA70B3 /* Assets.xcassets */,
 				0355E1E4261703FB00EA70B3 /* Info.plist */,
 				0355E1E1261703FB00EA70B3 /* Preview Content */,
+				0355E2092617040C00EA70B3 /* PHPickerRepresentable.swift */,
+				0355E20E2617043F00EA70B3 /* ImagePickerPresentationData.swift */,
+				0355E2132617087600EA70B3 /* ImageData.swift */,
+				0355E21826170BE800EA70B3 /* ImagePickerRepresentable.swift */,
 			);
 			path = PHPickerWithSwiftUI;
 			sourceTree = "<group>";
@@ -259,7 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0355E21926170BE800EA70B3 /* ImagePickerRepresentable.swift in Sources */,
+				0355E20A2617040C00EA70B3 /* PHPickerRepresentable.swift in Sources */,
+				0355E20F2617043F00EA70B3 /* ImagePickerPresentationData.swift in Sources */,
 				0355E1DE261703F800EA70B3 /* ContentView.swift in Sources */,
+				0355E2142617087600EA70B3 /* ImageData.swift in Sources */,
 				0355E1DC261703F800EA70B3 /* PHPickerWithSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

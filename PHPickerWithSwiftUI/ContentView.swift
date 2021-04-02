@@ -8,9 +8,50 @@
 import SwiftUI
 
 struct ContentView: View {
+    // PHPickerのfullScreenの固有データ
+    @State private var presentation: ImagePickerPresentationData?
+    
+    // ImagePicker側でbindする画像
+    @State private var bindingImagePickerImage: UIImage?
+    
+    // PHPicker側でbindする画像一覧
+    @State private var bindingPhPickerImages: [UIImage] = []
+    
+    // 表示用の画像データ
+    @State private var images: [ImageData] = []
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack(spacing: 20) {
+            HStack {
+                Button(action: {
+                    presentation = .init(presentation: .phpicker(pickedImages: $bindingPhPickerImages, selectionLimit: 10, onDismiss: {
+                        images = bindingPhPickerImages.map({ ImageData(image: $0) })
+                    }))
+                }, label: {
+                    Text("PHPicker")
+                })
+                
+                Button(action: {
+                    presentation = ImagePickerPresentationData(presentation: .picker(image: $bindingImagePickerImage, sourceType: .camera, onDismiss: {
+                        if let pickedImage: UIImage = bindingImagePickerImage {
+                            images = [ImageData(image: pickedImage)]
+                        }
+                    }))
+                }, label: {
+                    Text("ImagePicker")
+                })
+            }
+
+            .fullScreenCover(item: $presentation) { $0.presentation }
+            
+            List {
+                ForEach(images) { imageData in
+                    Image(uiImage: imageData.image)
+                        .resizable()
+                        .scaledToFit()
+                }
+            }
+        }
     }
 }
 
