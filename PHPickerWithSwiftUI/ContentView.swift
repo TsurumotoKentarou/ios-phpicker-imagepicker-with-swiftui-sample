@@ -25,6 +25,7 @@ struct ContentView: View {
             HStack {
                 Button(action: {
                     presentation = .init(presentation: .phpicker(pickedImages: $bindingPhPickerImages, selectionLimit: 10, onDismiss: {
+                        presentation = nil
                         images = bindingPhPickerImages.map({ ImageData(image: $0) })
                     }))
                 }, label: {
@@ -36,6 +37,7 @@ struct ContentView: View {
                         if let pickedImage: UIImage = bindingImagePickerImage {
                             images = [ImageData(image: pickedImage)]
                         }
+                        bindingImagePickerImage = nil
                     }))
                 }, label: {
                     Text("ImagePicker")

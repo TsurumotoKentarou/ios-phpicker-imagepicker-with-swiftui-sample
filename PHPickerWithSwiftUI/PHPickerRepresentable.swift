@@ -43,6 +43,11 @@ struct PHPickerRepresentable: UIViewControllerRepresentable {
         }
         
         func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+            if results.isEmpty {
+                picker.dismiss(animated: true, completion: nil)
+                return
+            }
+            
             // 選択した画像を一つずつ読み込む
             let dispatchSemaphore = DispatchSemaphore(value: 0)
             var pickedImage: [UIImage] = []
