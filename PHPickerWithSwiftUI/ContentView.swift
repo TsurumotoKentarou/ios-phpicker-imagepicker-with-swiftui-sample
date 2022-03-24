@@ -33,7 +33,7 @@ struct ContentView: View {
                 })
                 
                 Button(action: {
-                    presentation = ImagePickerPresentationData(presentation: .picker(image: $bindingImagePickerImage, sourceType: .camera, onDismiss: {
+                    presentation = ImagePickerPresentationData(presentation: .camera(image: $bindingImagePickerImage, onDismiss: {
                         if let pickedImage: UIImage = bindingImagePickerImage {
                             images = [ImageData(image: pickedImage)]
                         }

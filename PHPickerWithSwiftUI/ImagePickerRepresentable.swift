@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct ImagePicker: UIViewControllerRepresentable {
+struct CameraPicker: UIViewControllerRepresentable {
     @Binding var image: UIImage?
-    let sourceType: UIImagePickerController.SourceType
+
     let onDismiss: () -> Void
     
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        let parent: ImagePicker
+        let parent: CameraPicker
         
-        init(_ parent: ImagePicker) {
+        init(_ parent: CameraPicker) {
             self.parent = parent
         }
         
@@ -23,9 +23,7 @@ struct ImagePicker: UIViewControllerRepresentable {
             if let uiImage = info[.originalImage] as? UIImage {
                 parent.image = uiImage
                 
-                if parent.sourceType == .camera {
-                    UIImageWriteToSavedPhotosAlbum(uiImage, uiImage, nil, nil)
-                }
+                UIImageWriteToSavedPhotosAlbum(uiImage, uiImage, nil, nil)
             }
             
             picker.dismiss(animated: true) { [weak self] in
@@ -44,13 +42,13 @@ struct ImagePicker: UIViewControllerRepresentable {
         Coordinator(self)
     }
     
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
+    func makeUIViewController(context: UIViewControllerRepresentableContext<CameraPicker>) -> UIImagePickerController {
         let picker: UIImagePickerController = .init()
         picker.delegate = context.coordinator
-        picker.sourceType = sourceType
+        picker.sourceType = .camera
         return picker
     }
     
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<CameraPicker>) {
     }
 }
