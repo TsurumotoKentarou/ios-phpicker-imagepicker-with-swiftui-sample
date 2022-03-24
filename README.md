@@ -5,6 +5,4 @@ Sample app to display images using PHPickerViewController and ImagePickerViewCon
 
 
 ## Requirement
-Xcode12.4
-
-Swift5
+Xcode13.3
